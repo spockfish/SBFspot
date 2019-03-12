@@ -1,6 +1,7 @@
+# switches
 db_opt = get_option('db_opt')
 
-# sources, sqlite-only for now
+# sources
 no_sql_sources = files(['boost_ext.cpp', 'misc.cpp', 'sunrise_sunset.cpp', 'SBFNet.cpp', 'CSVexport.cpp', 
                        'Ethernet.cpp', 'EventData.cpp', 'ArchData.cpp', 'SBFspot.cpp', 'TagDefs.cpp', 'Bluetooth.cpp'])
 sqlite_sources = no_sql_sources + files(['db_SQLite.cpp', 'db_SQLite_Export.cpp'])
