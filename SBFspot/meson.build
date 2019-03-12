@@ -13,16 +13,19 @@ boost_dep = dependency('boost', modules: ['date_time', 'system', 'filesystem', '
 sqlite_dep = dependency('sqlite3')
 mariadb_dep = dependency('libmariadb')
 
+# take care of the version
+pre_args = ('-DPACKAGE_VERSION="@0@"'.format(meson.project_version()))
+
 # and finally the executable
 if db_opt == 'sqlite'
   executable('sbfspot', sqlite_sources,
              dependencies : [thread_dep, bluetooth_dep, boost_dep, sqlite_dep],
-	     cpp_args : '-DUSE_SQLITE')
+	     cpp_args : ['-DUSE_SQLITE', pre_args])
 endif
 
 if db_opt == 'mariadb'
   executable('sbfspot', mariadb_sources,
              dependencies : [thread_dep, bluetooth_dep, boost_dep, mariadb_dep],
-	     cpp_args : '-DUSE_MYSQL')
+	     cpp_args : ['-DUSE_MYSQL', pre_args])
 endif
 
