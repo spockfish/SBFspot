@@ -1,0 +1,2 @@
+# database options. by default we're using sqlite
+option('db_opt', type : 'combo', choices : ['sqlite', 'mariadb'], value: 'sqlite')
