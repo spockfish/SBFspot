@@ -1,4 +1,4 @@
-#define VERSION "3.5.0"
+#define VERSION PACKAGE_VERSION
 
 // Fixed #230: Unknown Inverter Type SBS3.7-10
 // Fixed #261: Unknown Inverter Type STP4.0-3AV-40
